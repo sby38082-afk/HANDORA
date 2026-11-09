@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handora - เกมเรียนรู้ภาษามือ</title>
+</head>
+<body>
+
+<!-- PAGE 1 : LOGIN -->
+<div id="loginPage" class="page">
+  <div class="login-box">
+    <div class="logo">H</div>
+    <h1>Handora</h1>
+    <p>เกมเรียนรู้ภาษามือ</p>
+
+    <form id="loginForm">
+      <input id="username" type="text" placeholder="ชื่อผู้ใช้" required>
+      <input id="password" type="password" placeholder="รหัสผ่าน" required>
+      <button type="submit">เข้าสู่ระบบ</button>
+    </form>
+  </div>
+</div>
+
+<!-- PAGE 2 : HOME -->
+<div id="gamePage" class="page hidden">
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">Handora</div>
+
+      <div class="menu">
+        <button class="menu-item active">🏠 หน้าหลัก</button>
+        <button class="menu-item">📖 บทเรียน</button>
+        <button class="menu-item">🎮 เล่นเกม</button>
+        <button class="menu-item">🏆 อันดับ</button>
+        <button class="menu-item">👤 โปรไฟล์</button>
+        <button class="menu-item">⚙️ ตั้งค่า</button>
+      </div>
+    </aside>
+
+    <main class="home-main">
+      <h1>สวัสดี <span id="welcomeName">Nana</span>! 💙</h1>
+      <p class="sub-title">มาเรียนภาษามือกันเถอะ</p>
+
+      <div class="continue-card">
+        <div>
+          <span class="small-title">🎯 เรียนต่อ</span>
+          <h2>บทเรียนที่ 1</h2>
+          <p>เรียนรู้ท่ามือพื้นฐาน</p>
+        </div>
+        <button id="startLesson">เริ่มเรียน →</button>
+      </div>
+
+      <h2 class="section-title">📚 หมวดบทเรียน</h2>
+
+      <div class="categories">
+        <div class="category">
+          <div>🔤</div>
+          <h3>ตัวอักษร</h3>
+          <p>เรียนรู้ ก-ฮ</p>
+        </div>
+
+        <div class="category">
+          <div>🔢</div>
+          <h3>ตัวเลข</h3>
+          <p>เรียนรู้ตัวเลข</p>
+        </div>
+
+        <div class="category">
+          <div>💬</div>
+          <h3>คำศัพท์</h3>
+          <p>คำศัพท์พื้นฐาน</p>
+        </div>
+
+        <div class="category">
+          <div>🗣️</div>
+          <h3>ประโยค</h3>
+          <p>ฝึกพูดเป็นประโยค</p>
+        </div>
+
+        <div class="category">
+          <div>🤝</div>
+          <h3>การสื่อสาร</h3>
+          <p>ใช้ในชีวิตประจำวัน</p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>1</strong>
+          <span>บทเรียน</span>
+        </div>
+        <div class="stat">
+          <strong>0</strong>
+          <span>คะแนน</span>
+        </div>
+        <div class="stat">
+          <strong>0</strong>
+          <span>วันที่เรียน</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- PAGE 3 : LESSON -->
+<div id="lessonPage" class="page hidden">
+
+  <header class="lesson-header">
+    <button id="backHome" class="back-button">← กลับ</button>
+
+    <div>
+      <h1>ทักทาย</h1>
+      <p>เกมที่ <span id="gameNumber">1</span> / 7</p>
+    </div>
+
+    <div class="score-box">
+      คะแนน
+      <strong id="totalScore">0</strong>
+    </div>
+  </header>
+
+  <main class="lesson-content">
+
+    <!-- REFERENCE VIDEO AND SKELETON -->
+    <section class="video-card">
+
+      <h2>🎬 คลิปต้นแบบและจุดตรวจจับ</h2>
+
+      <div class="gesture-title">
+        สวัสดี: ท่ามือใช้กับเพื่อน
+      </div>
+
+      <div class="reference-layout">
+
+        <!-- LEFT: REFERENCE VIDEO -->
+        <div class="reference-column">
+          <h3>คลิปต้นแบบ</h3>
+
+          <div class="video-box">
+            <video
+              id="referenceVideo"
+              controls
+              playsinline
+            ></video>
+
+            <div id="videoMessage" class="video-message">
+              เลือกคลิปท่าทางตัวอย่าง
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: REFERENCE SKELETON -->
+        <div class="reference-column">
+          <h3>จุดตรวจจับจากคลิป</h3>
+
+          <div class="skeleton-box">
+            <canvas id="referenceCanvas"></canvas>
+
+            <div id="referenceMessage">
+              รอคลิปเล่นเพื่อจับจุด
+            </div>
+          </div>
+
+          <p class="detection-label">
+            ใบหน้า แขน ลำตัว และมือ
+          </p>
+        </div>
+
+      </div>
+
+      <div class="video-upload">
+        <label for="referenceVideoFile">
+          📁 เลือกคลิปท่าทางตัวอย่าง
+        </label>
+
+        <input
+          type="file"
+          id="referenceVideoFile"
+          accept="video/*"
+        >
+
+        <p id="videoName">ยังไม่ได้เลือกคลิป</p>
+      </div>
+
+    </section>
+
+    <!-- INSTRUCTION -->
+    <section class="instruction-card">
+
+      <h2>สวัสดี</h2>
+
+      <div class="instruction-name">
+        ท่ามือใช้กับเพื่อน
+      </div>
+
+      <h3>วิธีเล่น</h3>
+
+      <ol>
+        <li>ดูคลิปต้นแบบทางซ้าย</li>
+        <li>สังเกตจุดตรวจจับทางขวา</li>
+        <li>กดเปิดกล้องด้านล่าง</li>
+        <li>ทำท่ามือตามคลิปต้นแบบ</li>
+        <li>ระบบจะแสดงจุดตรวจจับจากกล้องของคุณ</li>
+      </ol>
+
+      <div class="tip">
+        💡 ยืนให้กล้องมองเห็นใบหน้า ช่วงตัว และมือทั้งสองข้าง
+      </div>
+
+    </section>
+
+    <!-- USER CAMERA -->
+    <section class="practice-card">
+
+      <h2>📷 ทำตามท่าตัวอย่าง</h2>
+
+      <div class="practice-area">
+
+        <div class="camera-wrapper">
+
+          <video
+            id="userCamera"
+            autoplay
+            muted
+            playsinline
+          ></video>
+
+          <canvas id="handCanvas"></canvas>
+
+          <div id="cameraMessage">
+            กดเปิดกล้องเพื่อเริ่ม
+          </div>
+
+        </div>
+
+        <div class="result-panel">
+
+          <div class="character">✋</div>
+
+          <h3 id="handResult">พร้อมหรือยัง?</h3>
+
+          <div class="similarity">
+            ความเหมือน
+            <strong>
+              <span id="similarityScore">--</span>%
+            </strong>
+          </div>
+
+          <p id="cameraStatus" class="camera-status">
+            ยังไม่ได้เปิดกล้อง
+          </p>
+
+          <button id="cameraBtn" class="main-btn">
+            📷 เปิดกล้อง
+          </button>
+
+          <button id="checkBtn" class="check-btn" disabled>
+            🔍 ตรวจสอบการตรวจจับ
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- PROGRESS -->
+      <div class="progress-area">
+        <div class="progress-item active">1</div>
+        <div class="progress-line"></div>
+        <div class="progress-item">2</div>
+        <div class="progress-line"></div>
+        <div class="progress-item">3</div>
+        <div class="progress-line"></div>
+        <div class="progress-item">4</div>
+        <div class="progress-line"></div>
+        <div class="progress-item">5</div>
+        <div class="progress-line"></div>
+        <div class="progress-item">6</div>
+        <div class="progress-line"></div>
+        <div class="progress-item">7</div>
+      </div>
+
+      <button id="nextBtn" class="next-btn" disabled>
+        ถัดไป →
+      </button>
+
+    </section>
+
+  </main>
+</div>
+
+<!-- MEDIAPIPE LIBRARIES -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+
+</body>
+  </html>

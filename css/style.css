@@ -1,0 +1,647 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef8ff;
+  color: #243447;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* LOGIN */
+
+#loginPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.logo {
+  font-size: 65px;
+  font-weight: bold;
+  color: #2196f3;
+}
+
+.login-box h1 {
+  margin: 10px 0 5px;
+  font-size: 35px;
+}
+
+.login-box p {
+  color: #78909c;
+  margin-bottom: 30px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #d7e8f3;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  border-radius: 15px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* HOME */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  background: white;
+  padding: 25px 15px;
+  box-shadow: 5px 0 20px rgba(0,0,0,.04);
+  flex-shrink: 0;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 35px;
+  text-align: center;
+  color: #1689dc;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 16px;
+  color: #607d8b;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  background: #e3f4ff;
+  color: #1689dc;
+  font-weight: bold;
+}
+
+.home-main {
+  flex: 1;
+  padding: 45px;
+  min-width: 0;
+}
+
+.home-main h1 {
+  margin-bottom: 5px;
+}
+
+.sub-title {
+  color: #78909c;
+}
+
+.continue-card {
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 25px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.continue-card h2 {
+  margin: 8px 0;
+}
+
+.small-title {
+  color: #2196f3;
+  font-weight: bold;
+}
+
+.continue-card button {
+  border: 0;
+  background: #2196f3;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.section-title {
+  margin-top: 35px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.category {
+  background: white;
+  padding: 20px 10px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.category div {
+  font-size: 35px;
+}
+
+.category h3 {
+  margin-bottom: 5px;
+}
+
+.category p {
+  margin: 0;
+  color: #90a4ae;
+  font-size: 13px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stat {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  min-width: 130px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 28px;
+  color: #2196f3;
+}
+
+.stat span {
+  color: #78909c;
+}
+
+/* LESSON HEADER */
+
+.lesson-header {
+  background: white;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,.05);
+}
+
+.lesson-header h1 {
+  margin: 0;
+}
+
+.lesson-header p {
+  margin: 5px 0 0;
+  color: #90a4ae;
+}
+
+.back-button {
+  border: 0;
+  background: #e8f6ff;
+  color: #2186c4;
+  padding: 12px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.score-box {
+  background: #fff8d9;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.score-box strong {
+  display: block;
+  font-size: 22px;
+}
+
+/* LESSON CONTENT */
+
+.lesson-content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px 60px;
+}
+
+.video-card,
+.instruction-card,
+.practice-card {
+  background: white;
+  border-radius: 28px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.video-card h2 {
+  margin-top: 0;
+}
+
+.gesture-title {
+  display: inline-block;
+  background: #e6f6ff;
+  color: #1683c2;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+/* REFERENCE VIDEO + SKELETON */
+
+.reference-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.reference-column {
+  min-width: 0;
+}
+
+.reference-column h3 {
+  text-align: center;
+  color: #1683c2;
+  margin: 0 0 12px;
+}
+
+.video-box,
+.skeleton-box {
+  height: 340px;
+  background: #111a20;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #111a20;
+}
+
+.video-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  pointer-events: none;
+  text-align: center;
+  padding: 10px;
+}
+
+#referenceCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+#referenceMessage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  pointer-events: none;
+}
+
+.detection-label {
+  text-align: center;
+  color: #78909c;
+  font-size: 13px;
+}
+
+.video-upload {
+  margin-top: 20px;
+  padding: 18px;
+  background: #f4fbff;
+  border-radius: 18px;
+}
+
+.video-upload label {
+  display: block;
+  color: #1683c2;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.video-upload input {
+  width: 100%;
+}
+
+#videoName {
+  margin-bottom: 0;
+  color: #78909c;
+  font-size: 14px;
+}
+
+/* INSTRUCTION */
+
+.instruction-card h2 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.instruction-name {
+  color: #1683c2;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.instruction-card li {
+  margin: 12px 0;
+}
+
+.tip {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff8dd;
+  border-radius: 15px;
+}
+
+/* USER CAMERA */
+
+.practice-card h2 {
+  margin-top: 0;
+}
+
+.practice-area {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 25px;
+}
+
+.camera-wrapper {
+  height: 360px;
+  background: #111a20;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.camera-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+#handCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
+#cameraMessage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  background: rgba(0,0,0,.25);
+  text-align: center;
+  padding: 15px;
+}
+
+.result-panel {
+  text-align: center;
+  padding: 20px;
+}
+
+.character {
+  font-size: 70px;
+}
+
+.similarity {
+  margin: 20px 0;
+  font-size: 17px;
+}
+
+.similarity strong {
+  display: block;
+  color: #2196f3;
+  font-size: 38px;
+}
+
+.camera-status {
+  color: #78909c;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.main-btn,
+.check-btn,
+.next-btn {
+  width: 100%;
+  border: 0;
+  padding: 14px;
+  border-radius: 15px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.check-btn {
+  background: #43a047;
+  color: white;
+}
+
+button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+/* PROGRESS */
+
+.progress-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.progress-item {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e0e8ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.progress-item.active {
+  background: #2196f3;
+  color: white;
+}
+
+.progress-item.completed {
+  background: #43a047;
+  color: white;
+}
+
+.progress-line {
+  width: 30px;
+  height: 4px;
+  background: #e0e8ed;
+}
+
+.next-btn {
+  max-width: 300px;
+  display: block;
+  margin: 25px auto 0;
+  background: #2196f3;
+  color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  .home-main {
+    padding: 25px 15px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .continue-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .stats {
+    flex-wrap: wrap;
+  }
+
+  .lesson-header {
+    padding: 12px;
+  }
+
+  .lesson-header h1 {
+    font-size: 22px;
+  }
+
+  .lesson-content {
+    padding: 20px 10px;
+  }
+
+  .video-card,
+  .instruction-card,
+  .practice-card {
+    padding: 18px;
+  }
+
+  .reference-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .video-box,
+  .skeleton-box {
+    height: 190px;
+  }
+
+  .reference-column h3 {
+    font-size: 14px;
+  }
+
+  .practice-area {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-wrapper {
+    height: 300px;
+  }
+
+  .progress-item {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .progress-line {
+    width: 10px;
+  }
+
+  .score-box {
+    padding: 8px 12px;
+  }
+  }
